@@ -1,0 +1,104 @@
+@prefix : <https://www.wallandbinkley.com/rcb/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:JCMR 
+	a org:Organization ;
+	rdfs:label "Joint Committee on Materials for Research" ;
+	owl:sameAs <http://worldcat.org/identities/lccn-n97003028/> ;
+	org:unitOf :SSRC ;
+	org:unitOf :ACLS ;
+	org:hasPost :JCMR_chair .
+
+:SSRC
+	a org:Organization ;
+	rdfs:label "Social Science Research Council" ;
+	owl:sameAs <http://dbpedia.org/resource/Social_Science_Research_Council> .
+
+:ACLS
+	a org:Organization ;
+	rdfs:label "American Council of Learned Societies" ;
+	owl:sameAs <http://dbpedia.org/resource/American_Council_of_Learned_Societies> .
+
+:JCMR_chair
+	a org:Role ;
+	rdfs:label "Chair" .
+
+:JCMR_member
+	a org:Role ;
+	rdfs:label "Member" .
+
+:JCMR_secretary
+	a org:Role ;
+	rdfs:label "Secretary" .
+
+:JCMR_executive_secretary
+	a org:Role ;
+	rdfs:label "Executive Secretary" .
+
+:RCB
+	a foaf:Person ;
+	foaf:surname "Binkley" ;
+	foaf:givenname "Robert Cedric" .
+
+:RCB_JCMR_chair
+	a org:Membership ;
+	org:member :RCB ;
+	org:organization :JCMR ;
+	org:role :JCMR_chair ;
+	org:memberDuring [
+		a time:Interval; 
+		time:hasBeginning [
+	      a time:DateTimeDescription ;
+	      time:unitType time:unitYear ;
+	      time:year "1932"^^xsd:gYear 
+      	];
+		time:hasEnd [
+	      a time:DateTimeDescription ;
+	      time:unitType time:unitYear ;
+	      time:year "1940"^^xsd:gYear 
+      	]
+	] .
+
+:RCB_JCMR
+	a org:Membership ;
+	org:member :RCB ;
+	org:organization :JCMR ;
+	org:role :JCMR_member ;
+	org:memberDuring [
+		a time:Interval; 
+		time:hasBeginning [
+	      a time:DateTimeDescription ;
+	      time:unitType time:unitYear ;
+	      time:year "1930"^^xsd:gYear 
+      	];
+		time:hasEnd [
+	      a time:DateTimeDescription ;
+	      time:unitType time:unitYear ;
+	      time:year "1940"^^xsd:gYear 
+      	]
+	] .
+
+:RCB_JCMR_secretary
+	a org:Membership ;
+	org:member :RCB ;
+	org:organization :JCMR ;
+	org:role :JCMR_secretary ;
+	org:memberDuring [
+		a time:Interval; 
+		time:hasBeginning [
+	      a time:DateTimeDescription ;
+	      time:unitType time:unitYear ;
+	      time:year "1930"^^xsd:gYear 
+      	];
+		time:hasEnd [
+	      a time:DateTimeDescription ;
+	      time:unitType time:unitYear ;
+	      time:year "1932"^^xsd:gYear 
+      	]
+	] .

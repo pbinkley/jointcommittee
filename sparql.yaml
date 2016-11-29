@@ -1,0 +1,20 @@
+---
+-
+      title: RCB membership by role and years
+      query: |
+            SELECT DISTINCT ?s ?rl ?ol ?start ?e
+            WHERE {
+                  ?a a org:Membership .
+                  ?a org:member ?m .
+                  ?a org:organization ?o .
+                  ?a org:role ?r .
+                  ?r rdfs:label ?rl .
+                  ?m foaf:surname ?s .
+                  ?o rdfs:label ?ol .
+                  ?a org:memberDuring ?md .
+                  ?md time:hasBeginning ?beg . 
+                  ?beg time:year ?start .
+                  ?md time:hasEnd ?en .
+                  ?en time:year ?e .
+            }
+      output: "%s is %s of %s (%s-%s)"
