@@ -13,7 +13,10 @@
 	owl:sameAs <http://worldcat.org/identities/lccn-n97003028/> ;
 	org:unitOf :SSRC ;
 	org:unitOf :ACLS ;
-	org:hasPost :JCMR_chair .
+	org:hasPost :JCMR_chair ;
+	org:hasPost :JCMR_secretary ;
+	org:hasPost :JCMR_member ;
+	org:hasPost :JCMR_executive_secretary .
 
 :SSRC
 	a org:Organization ;
@@ -56,12 +59,12 @@
 		time:hasBeginning [
 	      a time:DateTimeDescription ;
 	      time:unitType time:unitYear ;
-	      time:year "1932"^^xsd:gYear 
+	      time:year "1932"^^xsd:integer 
       	];
 		time:hasEnd [
 	      a time:DateTimeDescription ;
 	      time:unitType time:unitYear ;
-	      time:year "1940"^^xsd:gYear 
+	      time:year "1940"^^xsd:integer 
       	]
 	] .
 
@@ -75,12 +78,12 @@
 		time:hasBeginning [
 	      a time:DateTimeDescription ;
 	      time:unitType time:unitYear ;
-	      time:year "1930"^^xsd:gYear 
+	      time:year "1930"^^xsd:integer 
       	];
 		time:hasEnd [
 	      a time:DateTimeDescription ;
 	      time:unitType time:unitYear ;
-	      time:year "1940"^^xsd:gYear 
+	      time:year "1940"^^xsd:integer 
       	]
 	] .
 
@@ -94,11 +97,11 @@
 		time:hasBeginning [
 	      a time:DateTimeDescription ;
 	      time:unitType time:unitYear ;
-	      time:year "1930"^^xsd:gYear 
+	      time:year "1930"^^xsd:integer 
       	];
 		time:hasEnd [
 	      a time:DateTimeDescription ;
 	      time:unitType time:unitYear ;
-	      time:year "1932"^^xsd:gYear 
+	      time:year "1932"^^xsd:integer 
       	]
 	] .

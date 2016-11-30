@@ -18,3 +18,40 @@
                   ?en time:year ?e .
             }
       output: "%s is %s of %s (%s-%s)"
+-
+      title: "Find years (this works)"
+      query: |
+            SELECT ?year
+            WHERE {
+                  ?o time:year ?year .
+            }
+      output: "%s"
+-
+      title: "Find distinct years > 1935 (this works)"
+      query: |
+            SELECT DISTINCT ?year
+            WHERE {
+                  ?o time:year ?year .
+                  FILTER (xsd:double(?year) > 1935)
+            }
+      output: "%s"
+-
+      title: Who was the chair in 1935? (this works)
+      query: |
+            SELECT DISTINCT ?s ?rl
+            WHERE {
+                  ?a a org:Membership .
+                  ?a org:member ?m .
+                  ?a org:organization ?o .
+                  ?a org:role ?r .
+                  ?r rdfs:label ?rl .
+                  ?m foaf:surname ?s .
+                  ?o rdfs:label ?ol .
+                  ?a org:memberDuring ?md .
+                  ?md time:hasBeginning ?beg . 
+                  ?beg time:year ?start .
+                  ?md time:hasEnd ?en .
+                  ?en time:year ?e .
+                  FILTER(?start <= 1935 && ?e >= 1935 && ?rl = "Chair")
+            }
+      output: "%s was %s in 1935"

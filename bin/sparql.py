@@ -21,12 +21,12 @@ print("graph %s has %s statements." % (graph, len(g)))
 print
 
 for query in sparql:
-  print(query["title"])
+  print("Query: " + query["title"])
   print
 
   qres = g.query(query["query"])
 
   for row in qres:
-      print(query["output"] % row)
+      print("  " + query["output"] % row)
 
   print
