@@ -1,3 +1,10 @@
+# Contents:
+#   Organizations
+#   Roles
+#   Persons
+#   Memberships (linking Organization, Role and Person, with dates)
+#   Publications
+
 @prefix : <https://www.wallandbinkley.com/rcb/ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -10,6 +17,8 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
+
+# Organizations
 
 :JCMR 
 	a org:Organization ;
@@ -37,6 +46,8 @@
 	address:localityName "Ann Arbor" ;
 	foaf:name "Edwards Brothers" .
 
+# Roles
+
 :JCMR_chair
 	a org:Role ;
 	rdfs:label "Chair" .
@@ -52,6 +63,8 @@
 :JCMR_executive_secretary
 	a org:Role ;
 	rdfs:label "Executive Secretary" .
+
+# Persons
 
 :RCB
 	a foaf:Person ;
@@ -73,6 +86,8 @@
 :TRS a foaf:Person ;
     foaf:givenname "T. R." ;
     foaf:surname "Schellenberg" .
+
+# Memberships
 
 :RCB_JCMR_chair
 	a org:Membership ;
@@ -130,6 +145,8 @@
 	      time:year "1932"^^xsd:integer 
       	]
 	] .
+
+# Publications
 
 <http://hdl.handle.net/2027/mdp.39015003329243> a bibo:Book ;
     dcterms:contributor :AVB,
