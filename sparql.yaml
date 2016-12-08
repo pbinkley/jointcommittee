@@ -1,5 +1,23 @@
 ---
 -
+      title: Publications of members of the committee
+      query: |
+            SELECT DISTINCT ?author ?title ?year
+            WHERE {
+                  ?a a org:Membership .
+                  ?a org:member ?m .
+                  ?a org:organization ?o .
+                  ?o rdfs:label "Joint Committee on Materials for Research" .
+                  ?a org:role ?r .
+                  ?r rdfs:label "Member" .
+                  ?book a bibo:Book .
+                  ?book dcterms:creator ?m .
+                  ?m foaf:surname ?author .
+                  ?book dcterms:title ?title .
+                  ?book dcterms:date ?year .
+            }
+      output: "%s: %s, %s"
+-
       title: RCB membership by role and years
       query: |
             SELECT DISTINCT ?s ?rl ?ol ?start ?e

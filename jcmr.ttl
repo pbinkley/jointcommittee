@@ -6,6 +6,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix address: <http://schemas.talis.com/2005/address/schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 
 :JCMR 
 	a org:Organization ;
@@ -28,6 +32,11 @@
 	rdfs:label "American Council of Learned Societies" ;
 	owl:sameAs <http://dbpedia.org/resource/American_Council_of_Learned_Societies> .
 
+:EdwardsBros
+	a foaf:Organization ;
+	address:localityName "Ann Arbor" ;
+	foaf:name "Edwards Brothers" .
+
 :JCMR_chair
 	a org:Role ;
 	rdfs:label "Chair" .
@@ -48,6 +57,22 @@
 	a foaf:Person ;
 	foaf:surname "Binkley" ;
 	foaf:givenname "Robert Cedric" .
+
+:AVB a foaf:Person ;
+    foaf:givenname "Adeline V." ;
+    foaf:surname "Barry" .
+
+:JMcC a foaf:Person ;
+    foaf:givenname "Josephine" ;
+    foaf:surname "McCarter" .
+
+:Hanley a foaf:Person ;
+    foaf:givenname "Miles" ;
+    foaf:surname "Hanley" .
+
+:TRS a foaf:Person ;
+    foaf:givenname "T. R." ;
+    foaf:surname "Schellenberg" .
 
 :RCB_JCMR_chair
 	a org:Membership ;
@@ -105,3 +130,21 @@
 	      time:year "1932"^^xsd:integer 
       	]
 	] .
+
+<http://hdl.handle.net/2027/mdp.39015003329243> a bibo:Book ;
+    dcterms:contributor :AVB,
+        :JMcC,
+        :Hanley,
+        :TRS ;
+    dcterms:creator :RCB ;
+    dcterms:date "1936" ;
+    dcterms:publisher :EdwardsBros ;
+    dcterms:title "Manual on Methods of Reproducing Research Materials: A Survey Made for the Joint Committee on Materials for Research of the Social Science Research Council and the American Council of Learned Societies" ;
+    bibo:authorList [ a rdf:Seq ;
+            rdf:_1 :RCB ] ;
+    bibo:contributorList [ a rdf:Seq ;
+            rdf:_1 :TRS ;
+            rdf:_2 :Hanley ;
+            rdf:_3 :JMcC ;
+            rdf:_4 :AVB ] ;
+    bibo:uri "http://hdl.handle.net/2027/mdp.39015003329243" .
